@@ -95,10 +95,10 @@ nodePathMap:
     
 podAnnotations: {}
 
-podSecurityContext: {}
-  # runAsNonRoot: true
+podSecurityContext:
+  runAsNonRoot: true
 
-securityContext: {}
+securityContext: 
   allowPrivilegeEscalation: true
   seccompProfile:
     type: RuntimeDefault
