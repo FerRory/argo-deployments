@@ -99,7 +99,7 @@ podSecurityContext: {}
   # runAsNonRoot: true
 
 securityContext: {}
-  # allowPrivilegeEscalation: false
+  allowPrivilegeEscalation: true
   # seccompProfile:
   #   type: RuntimeDefault
   # capabilities:
