@@ -13,6 +13,11 @@ spec:
     repoURL: https://github.com/FerRory/argo-deployments.git
     targetRevision: HEAD
   syncPolicy:
+    managedNamespaceMetadata:
+      labels: 
+        pod-security.kubernetes.io/enforce: privileged
+    syncOptions:
+    - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
