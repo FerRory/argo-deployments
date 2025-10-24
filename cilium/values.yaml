@@ -916,11 +916,11 @@ ingressController:
   loadbalancerMode: shared
   # -- Enforce https for host having matching TLS host in Ingress.
   # Incoming traffic to http listener will return 308 http error code with respective location in header.
-  enforceHttps: true
+#  enforceHttps: true
   # -- Enable proxy protocol for all Ingress listeners. Note that _only_ Proxy protocol traffic will be accepted once this is enabled.
-  enableProxyProtocol: false
+#  enableProxyProtocol: false
   # -- IngressLBAnnotations are the annotation and label prefixes, which are used to filter annotations and/or labels to propagate from Ingress to the Load Balancer service
-  ingressLBAnnotationPrefixes: ['lbipam.cilium.io', 'nodeipam.cilium.io', 'service.beta.kubernetes.io', 'service.kubernetes.io', 'cloud.google.com']
+#  ingressLBAnnotationPrefixes: ['lbipam.cilium.io', 'nodeipam.cilium.io', 'service.beta.kubernetes.io', 'service.kubernetes.io', 'cloud.google.com']
   # @schema
   # type: [null, string]
   # @schema
@@ -950,7 +950,7 @@ ingressController:
     # -- Annotations to be added for the shared LB service
     annotations: {}
     # -- Service type for the shared LB service
-    type: LoadBalancer
+    type: ClusterIP
     # @schema
     # type: [null, integer]
     # @schema
@@ -980,7 +980,7 @@ ingressController:
     # -- Control how traffic from external sources is routed to the LoadBalancer Kubernetes Service for Cilium Ingress in shared mode.
     # Valid values are "Cluster" and "Local".
     # ref: https://kubernetes.io/docs/reference/networking/virtual-ips/#external-traffic-policy
-    externalTrafficPolicy: Cluster
+    externalTrafficPolicy: "~"
   # Host Network related configuration
   hostNetwork:
     # -- Configure whether the Envoy listeners should be exposed on the host network.
@@ -991,9 +991,9 @@ ingressController:
     nodes:
       # -- Specify the labels of the nodes where the Ingress listeners should be exposed
       #
-      matchLabels:
-        kubernetes.io/os: linux
-        kubernetes.io/hostname: talos-izf-ljs
+#      matchLabels:
+#        kubernetes.io/os: linux
+#        kubernetes.io/hostname: talos-izf-ljs
       #matchLabels: {}
 gatewayAPI:
   # -- Enable support for Gateway API in cilium
