@@ -7,6 +7,9 @@ resources:
 - namespace.yaml
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
+configMapGenerator:
+- name: argocd-cmd-params-cm
+  behavior: merge
+  literals:
+  - server.insecure="true"
 
-patches:
-- path: argocd-cmd-params-cm-patch.yaml
