@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  namespace: grafana
+  annotations:
+    ingress.cilium.io/force-https: enabled
+    cert-manager.io/issuer: ca-issuer
+spec:
+  ingressClassName: cilium
+  rules:
+    - host: grafana.homelab
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: grafana
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - grafana.homelab
+      secretName: grafana-cert

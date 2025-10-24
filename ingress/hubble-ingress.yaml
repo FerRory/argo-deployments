@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hubble-ingress
+  namespace: kube-system
+  annotations:
+    ingress.cilium.io/force-https: enabled
+    cert-manager.io/issuer: ca-issuer
+spec:
+  ingressClassName: cilium
+  rules:
+    - host: hubble.homelab
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hubble-ui
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - hubble.homelab
+      secretName: hubble-cert
