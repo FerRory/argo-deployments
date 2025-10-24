@@ -8,5 +8,5 @@ resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 
-patchesStrategicMerge:
-- argocd-cmd-params-cm-patch.yaml
+patches:
+- path: argocd-cmd-params-cm-patch.yaml
