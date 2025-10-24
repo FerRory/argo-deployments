@@ -991,9 +991,9 @@ ingressController:
     nodes:
       # -- Specify the labels of the nodes where the Ingress listeners should be exposed
       #
-#      matchLabels:
-#        kubernetes.io/os: linux
-#        kubernetes.io/hostname: talos-izf-ljs
+      matchLabels:
+        kubernetes.io/os: linux
+        kubernetes.io/hostname: talos-izf-ljs
       #matchLabels: {}
 gatewayAPI:
   # -- Enable support for Gateway API in cilium
