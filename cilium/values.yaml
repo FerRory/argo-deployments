@@ -905,15 +905,15 @@ envoyConfig:
 ingressController:
   # -- Enable cilium ingress controller
   # This will automatically set enable-envoy-config as well.
-  enabled: false
+  enabled: true
   # -- Set cilium ingress controller to be the default ingress controller
   # This will let cilium ingress controller route entries without ingress class set
-  default: false
+  default: true
   # -- Default ingress load balancer mode
   # Supported values: shared, dedicated
   # For granular control, use the following annotations on the ingress resource:
   # "ingress.cilium.io/loadbalancer-mode: dedicated" (or "shared").
-  loadbalancerMode: dedicated
+  loadbalancerMode: shared
   # -- Enforce https for host having matching TLS host in Ingress.
   # Incoming traffic to http listener will return 308 http error code with respective location in header.
   enforceHttps: true
@@ -984,7 +984,7 @@ ingressController:
   # Host Network related configuration
   hostNetwork:
     # -- Configure whether the Envoy listeners should be exposed on the host network.
-    enabled: false
+    enabled: true
     # -- Configure a specific port on the host network that gets used for the shared listener.
     sharedListenerPort: 8080
     # Specify the nodes where the Ingress listeners should be exposed
