@@ -13,3 +13,8 @@ configMapGenerator:
   literals:
   - server.insecure="true"
 
+- name: argocd-cm
+  behavior: merge
+  literals:
+  files:
+  - resource.customizations
