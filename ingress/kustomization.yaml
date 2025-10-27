@@ -6,8 +6,8 @@ resources:
 - argocd-ca-issuer.yaml
 - argocd-ingress.yaml
 - grafana-ca-issuer.yaml
-- grafana-ingress.yaml
-#- hubble-ca-issuer.yaml
+#- grafana-ingress.yaml
+- hubble-ca-issuer.yaml
 #- hubble-ingress.yaml
 
 
