@@ -984,7 +984,7 @@ ingressController:
   # Host Network related configuration
   hostNetwork:
     # -- Configure whether the Envoy listeners should be exposed on the host network.
-    enabled: false
+    enabled: true
     # -- Configure a specific port on the host network that gets used for the shared listener.
     sharedListenerPort: 8080
     # Specify the nodes where the Ingress listeners should be exposed
@@ -993,7 +993,7 @@ ingressController:
       #
       matchLabels:
         kubernetes.io/os: linux
-        kubernetes.io/hostname: talos-izf-ljs
+        kubernetes.io/hostname: talos-worker-0
       #matchLabels: {}
 gatewayAPI:
   # -- Enable support for Gateway API in cilium
