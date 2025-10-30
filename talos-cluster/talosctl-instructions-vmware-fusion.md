@@ -15,3 +15,8 @@ talosctl config node $CONTROL_PLANE_IP
 talosctl bootstrap
 
 talosctl kubeconfig -m
+
+
+## Additional instructions
+
+Make sure the Network configuration is static as when shutting down the VMs and starting them up a few days later the IP addresses could change which could break the setup.
