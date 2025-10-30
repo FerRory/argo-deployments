@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: alloy-k8s-monitoring
+  namespace: argocd
+spec:
+  destination:
+    namespace: k8s-monitoring
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s-monitoring
+    repoURL: https://github.com/FerRory/argo-deployments.git
+    targetRevision: HEAD
+  syncPolicy:
+    managedNamespaceMetadata:
+      labels: 
+        pod-security.kubernetes.io/enforce: privileged
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
