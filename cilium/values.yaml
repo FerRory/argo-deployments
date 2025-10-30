@@ -1904,16 +1904,16 @@ hubble:
     # -- hubble-ui ingress configuration.
     ingress:
       enabled: true
-      annotations: 
-        cert-manager.io/issuer: ca-issuer
+      annotations: {}
+      #  cert-manager.io/issuer: ca-issuer
       className: ""
       hosts:
         - hubble.homelab
       labels: {}
-      tls: 
-      - hosts:
-        - hubble.homelab
-        secretName: hubble-cert
+      # tls: 
+      # - hosts:
+      #   - hubble.homelab
+      #   secretName: hubble-cert
   # -- Hubble flows export.
   export:
     # --- Static exporter configuration.
