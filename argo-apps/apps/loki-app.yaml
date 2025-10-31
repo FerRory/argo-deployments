@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: kube-system
+    namespace: loki
     server: https://kubernetes.default.svc
   project: default
   source:
