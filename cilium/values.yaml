@@ -994,7 +994,7 @@ ingressController:
       #
       matchLabels:
         kubernetes.io/os: linux
-        kubernetes.io/hostname: talos-worker-0
+        kubernetes.io/hostname: talos-default-controlplane-1
       #matchLabels: {}
 gatewayAPI:
   # -- Enable support for Gateway API in cilium
