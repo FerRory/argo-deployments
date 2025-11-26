@@ -10,4 +10,3 @@ helmCharts:
     namespace: prometheus
     version: v3.7.1
     valuesFile: values.yaml
-~                                

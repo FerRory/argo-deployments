@@ -10,4 +10,3 @@ helmCharts:
     namespace: kube-system
     version: 1.18.2
     valuesFile: values.yaml
-~                                

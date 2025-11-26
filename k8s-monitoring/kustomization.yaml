@@ -10,4 +10,3 @@ helmCharts:
     namespace: k8s-monitoring
     version: 3.5.3
     valuesFile: values.yaml
-~                                
