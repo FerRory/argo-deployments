@@ -1,12 +1,12 @@
 #!/bin/bash
 talosctl cluster create --config-patch @patch.yaml --skip-k8s-node-readiness-check -p 8080:8080/tcp
 
-kubectl apply -k ../cilium
+kubectl kustomize --enable-helm=true  ../cilium | kubectl apply -f -
 
 cilium status --wait
 
 
-kubectl apply -k ../argocd
+kubectl kustomize --enable-helm=true ../argocd | kubectl apply -f -
 
 echo "Sleep 15 seconds..."
 
