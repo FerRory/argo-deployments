@@ -1,12 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: kube-system
+namespace: loki
 
 helmCharts:
   - repo: https://grafana.github.io/helm-charts
     name: loki
     releaseName: loki
+    namespace: loki
     version: 3.5.5
     valuesFile: values.yaml
 ~                                
