@@ -1,44 +1,31 @@
 # FerRory's ArgoCD Deployments
 
-## GitHub Repositories:
+## Apps
 
-* https://github.com/prometheus-community/helm-charts
-* https://github.com/grafana/helm-charts
-
-```
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm search repo prometheus-community
-helm pull prometheus-community/prometheus --untar
-
-helm repo add grafana https://grafana.github.io/helm-charts
-helm search repo grafana
-helm pull grafana/grafana --untar
-```
+* ArgoCD
+* Cilium
+* Grafana
+* k8s-monitoring
+* Local Path Provisioner
+* Loki
+* Prometheus
 
 ## Create Talos Cluster for Podman/Docker
 
 ```
 cd talos-cluster
-./talos-create.sh
+./talos-cluster-create-for-podman.sh
 ```
 
-Install Cilium
+Add the below lines to /etc/hosts
 ```
-helm install cilium ./cilium
-```
-
-Install ArgoCD
-```
-cd argocd
-k apply -k .
-```
-Follow README.md under argocd.
-
-Apply root-app.yaml to install Apps.
-```
-cd argo-apps
-k apply -f root-app.yaml
+127.0.0.1 grafana.homelab
+127.0.0.1 argocd.homelab
+127.0.0.1 hubble.homelab
 ```
 
+## Links
 
-
+* [ArgocD](http://argocd.homelab:8080)
+* [Grafana](http://grafana.homelab:8080)
+* [Hubble](http://hubble.homelab:8080)
