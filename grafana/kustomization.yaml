@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: grafana
 
 helmCharts:
-  - repo: https://github.com/grafana/helm-charts
+  - repo: https://grafana.github.io/helm-charts
     name: grafana
     releaseName: grafana
     namespace: grafana
