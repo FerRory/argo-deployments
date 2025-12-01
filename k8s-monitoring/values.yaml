@@ -6,6 +6,9 @@ destinations:
     type: loki
     url: http://loki.loki.svc.cluster.local:3100/loki/api/v1/push
 
+prometheusOperatorObjects:
+  enabled: true
+
 clusterEvents:
   enabled: true
   collector: alloy-logs
