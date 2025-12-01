@@ -8,5 +8,5 @@ helmCharts:
     name: k8s-monitoring
     releaseName: k8s-monitoring
     namespace: k8s-monitoring
-    version: 3.6.1
+    version: 3.5.2
     valuesFile: values.yaml
