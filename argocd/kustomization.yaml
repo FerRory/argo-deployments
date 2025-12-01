@@ -18,5 +18,6 @@ configMapGenerator:
 - name: argocd-cm
   behavior: merge
   literals:
+  - kustomize.buildOptions: --enable-helm
   files:
   - resource.customizations
