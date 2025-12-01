@@ -8,5 +8,5 @@ helmCharts:
     name: grafana
     releaseName: grafana
     namespace: grafana
-    version: 12.2.0
+    version: 10.1.2
     valuesFile: values.yaml
