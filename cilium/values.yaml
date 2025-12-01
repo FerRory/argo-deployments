@@ -24,6 +24,7 @@ ingressController:
   enabled: true
   loadbalancerMode: shared
   hostNetwork:
+    enabled: true
     nodes:
       matchLabels:
         kubernetes.io/os: linux
