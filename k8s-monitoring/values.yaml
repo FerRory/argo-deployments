@@ -10,14 +10,9 @@ clusterEvents:
   enabled: true
   collector: alloy-logs
 nodeLogs:
-  enabled: true
+  enabled: false
 podLogs:
-  enabled: true
-podLogsViaKubernetesApi:
   enabled: true
 
 alloy-logs:
   enabled: true
-  alloy:
-    clustering:
-      enabled: true
