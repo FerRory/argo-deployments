@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: prometheus
 
 helmCharts:
-  - repo: https://github.com/prometheus-community/helm-charts
+  - repo: https://prometheus-community.github.io/helm-charts
     name: prometheus
     releaseName: prometheus
     namespace: prometheus
