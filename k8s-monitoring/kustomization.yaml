@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: k8s-monitoring
+resources:
+ - namespace.yaml
 
 helmCharts:
   - repo: https://grafana.github.io/helm-charts
@@ -10,3 +12,5 @@ helmCharts:
     namespace: k8s-monitoring
     version: 3.5.2
     valuesFile: values.yaml
+    includeCRDs: true
+    skipHooks: true
