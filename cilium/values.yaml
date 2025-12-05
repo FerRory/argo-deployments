@@ -31,7 +31,7 @@ ingressController:
         kubernetes.io/os: linux
         kubernetes.io/hostname: talos-default-controlplane-1
 hubble:
-  enabled: true
+  enabled: false
   ui:
     enabled: true
     ingress:
