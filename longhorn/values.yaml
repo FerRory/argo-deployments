@@ -1,0 +1,3 @@
+# Disable preUpgradeChecker as workaround to deploy via ArgoCD.
+preUpgradeChecker:
+  jobEnabled: false
